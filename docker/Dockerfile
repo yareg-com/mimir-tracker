@@ -25,12 +25,10 @@ RUN apk --no-cache add curl tini && \
     adduser --disabled-password --gecos '' $APP && \
     mkdir -p $DATA_PATH && chown -R $APP $DATA_PATH
 
-COPY ./docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-
 WORKDIR /home/$APP
 USER $APP
 
 COPY --from=builder /usr/src/mimir-tracker/target/release/mimir-tracker /usr/local/bin/$APP
+COPY --chmod=755 ./docker/entrypoint.sh /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
