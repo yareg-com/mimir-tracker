@@ -30,7 +30,7 @@ USER $APP
 
 COPY --from=builder /usr/src/mimir-tracker/target/release/mimir-tracker /usr/local/bin/$APP
 
-COPY entrypoint.sh /entrypoint.sh
+COPY ./docker/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
