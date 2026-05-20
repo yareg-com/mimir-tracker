@@ -12,8 +12,8 @@ pub const CMD_SYNC_PING: u8 = 20;
 
 pub const MAX_HOP_COUNT: u8 = 3;
 
-pub const KEY_FILE: &str = "tracker.key";
-pub const DATA_FILE: &str = "data.bin";
+pub const KEY_FILE: &str = "/var/lib/mimir-tracker/tracker.key";
+pub const DATA_FILE: &str = "/var/lib/mimir-tracker/data.bin";
 
 // ── TLV Tags ────────────────────────────────────────────────────────────────
 

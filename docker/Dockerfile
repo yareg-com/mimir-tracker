@@ -18,7 +18,6 @@ RUN touch src/main.rs && cargo build --release
 FROM alpine:3.23.4
 
 ENV APP=mimir-tracker
-ENV CONFIG_PATH=/home/$APP/.$APP
 ENV DATA_PATH=/var/lib/$APP
 
 RUN apk --no-cache add curl tini && \
